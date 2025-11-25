@@ -21,6 +21,13 @@ module.exports = (_, argv) => {
         "Access-Control-Allow-Headers":
           "X-Requested-With, content-type, Authorization",
       },
+      proxy: [
+        {
+          context: "/assets/project/static/freeze",
+          target: "http://localhost:8080",
+          pathRewrite: { "^/assets/project/static/freeze": "" },
+        },
+      ],
     },
   };
 

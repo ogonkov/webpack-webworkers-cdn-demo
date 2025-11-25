@@ -1,11 +1,11 @@
 export class CustomWorker {
-  constructor(url) {
+  constructor(url, options) {
     const objectUrl = URL.createObjectURL(
       new Blob([`importScripts(${JSON.stringify(url)})`], {
         type: "application/javascript",
       })
     );
-    this.worker = new Worker(objectUrl);
+    this.worker = new Worker(objectUrl, options);
     URL.revokeObjectURL(objectUrl);
   }
 

@@ -3,7 +3,9 @@ import { CustomWorker as Worker } from "./CustomWorker/CustomWorker.js";
 const app = document.getElementById("root");
 
 function getWorker() {
-  return new Worker(new URL("./worker/worker.js", import.meta.url));
+  return new Worker(new URL("./worker/worker.js", import.meta.url), {
+    name: "calculator",
+  });
 }
 
 let worker = getWorker();
