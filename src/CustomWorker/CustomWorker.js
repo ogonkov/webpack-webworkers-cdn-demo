@@ -6,6 +6,7 @@ export class CustomWorker {
       })
     );
     this.worker = new Worker(objectUrl, options);
+    this.worker.postMessage({ publicPath: window.__PUBLIC_PATH__ });
     URL.revokeObjectURL(objectUrl);
   }
 

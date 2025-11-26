@@ -9,8 +9,17 @@
     </head>
 
     <body>
-        <p>Messages from worker:</p>
-        <div id="root"></div>
+        <div id="root">
+            <form>
+                <label>
+                    Value:
+                    <input name="value" type="text" pattern="\d+" placeholder="Numbers would be processed via worker"/>
+                </label>
+                <button type="submit">Calculate</button>
+            </form>
+            <p>Messages from worker:</p>
+            <div id="log"></div>
+        </div>
 
         <script src="http://foo-bar-cdn.me:8080/assets/project/static/freeze/js/main.js"></script>
     </body>
